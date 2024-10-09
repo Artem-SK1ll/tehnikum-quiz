@@ -1,10 +1,31 @@
 import React from "react";
+import { ProgressBar } from "../components/ProgressBar";
+import { LinkButton } from "../components/LinkButton";
 
 const StepTwo = () => {
+  const variants = [
+    {
+      id:"variant-1",
+      courseName:"Frontend"
+    },
+    {
+      id:"variant-2",
+      courseName:"Python"
+    },
+    {
+      id:"variant-3",
+      courseName:"DATA Analytics"
+    },
+    {
+      id:"variant-4",
+      courseName:"UX/UI"
+    },
+  ]
   return (
     <div className="container">
       <div className="wrapper">
         <div className="variants-quiz">
+          <ProgressBar/>
           <div className="indicator">
             <div className="indicator__text">
               <span className="indicator__description">
@@ -12,12 +33,7 @@ const StepTwo = () => {
               </span>
               <span className="indicator__value">15%</span>
             </div>
-            <div className="indicator__progressbar">
-              <div className="indicator__unit indicator__unit-1 _active"></div>
-              <div className="indicator__unit indicator__unit-2"></div>
-              <div className="indicator__unit indicator__unit-3"></div>
-              <div className="indicator__unit indicator__unit-4"></div>
-            </div>
+             <ProgressBar currentStep={2}/>
           </div>
           <div className="question">
             <h2>1. Занимательный вопрос</h2>
@@ -39,9 +55,7 @@ const StepTwo = () => {
                 <label htmlFor="variant-4">Ваш ответ</label>
               </li>
             </ul>
-            <button type="button" disabled id="next-btn">
-              Далее
-            </button>
+           <LinkButton path="step-there"></LinkButton>
           </div>
         </div>
       </div>

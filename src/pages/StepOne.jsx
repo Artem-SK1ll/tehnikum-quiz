@@ -1,4 +1,6 @@
 import React from "react";
+import { LinkButton } from "../components/LinkButton";
+import { ProgressBar } from "../components/ProgressBar";
 
 const StepOne = () => {
   return (
@@ -12,12 +14,7 @@ const StepOne = () => {
               </span>
               <span className="indicator__value">15%</span>
             </div>
-            <div className="indicator__progressbar">
-              <div className="indicator__unit indicator__unit-1"></div>
-              <div className="indicator__unit indicator__unit-2"></div>
-              <div className="indicator__unit indicator__unit-3"></div>
-              <div className="indicator__unit indicator__unit-4"></div>
-            </div>
+           <ProgressBar currentStep={1}/>
           </div>
           <div className="question">
             <h2>1. Занимательный вопрос</h2>
@@ -32,9 +29,7 @@ const StepOne = () => {
                 Введите номер в правильном формате например
               </span>
             </label>
-            <button type="button" disabled id="next-btn">
-              Далее
-            </button>
+            <LinkButton path="step-two"></LinkButton>
           </div>
         </div>
       </div>
